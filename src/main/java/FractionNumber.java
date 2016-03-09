@@ -7,6 +7,9 @@ public class FractionNumber {
     private int divisor;
 
     FractionNumber(int dividend, int divisor) {
+        if (divisor == 0) {
+            throw new IllegalArgumentException("Divisor can't be 0");
+        }
         this.dividend = dividend;
         this.divisor = divisor;
     }
@@ -42,7 +45,7 @@ public class FractionNumber {
 
     public String toStringValue() {
         if (divisor == 1) {
-            return dividend + "\n";
+            return dividend + "";
         }
         return dividend + "/" + divisor;
     }
