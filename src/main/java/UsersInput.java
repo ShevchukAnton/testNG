@@ -6,13 +6,15 @@ import java.util.Scanner;
  */
 public class UsersInput {
 
+    private int[] usersData;
+
     public UsersInput() {
 
     }
 
     public void input() {
 
-        int[] usersData = new int[4];
+        usersData = new int[4];
         System.out.println("Здравствуйте " + System.getProperty("user.name") + ".");
         System.out.println("Введите делимое для первой дроби: ");
         Scanner scan = new Scanner(System.in);
@@ -55,6 +57,12 @@ public class UsersInput {
         }
         usersData[3] = scan.nextInt();
 
+        operations();
+
+        oneMoreCycle();
+    }
+
+    private void operations() {
         //Fraction creation
         FractionNumber fraction_1 = new FractionNumber(usersData[0], usersData[1]);
         FractionNumber fraction_2 = new FractionNumber(usersData[2], usersData[3]);
@@ -63,15 +71,18 @@ public class UsersInput {
         FractionNumOperations manipulations = new FractionNumOperations();
         System.out.println("Сумма ваших дробей = " + manipulations.add(fraction_1, fraction_2).toStringValue());
         System.out.println("Это равняется - " + manipulations.add(fraction_1, fraction_2).value());
-        System.out.println("Частное ваших дробей = " + manipulations.sub(fraction_1, fraction_2).toStringValue());
-        System.out.println("Это равняется - " + manipulations.sub(fraction_1, fraction_2).value());
-        System.out.println("Разность от ваших дробей = " + manipulations.div(fraction_1, fraction_2).toStringValue());
+        System.out.println("Частное ваших дробей = " + manipulations.div(fraction_1, fraction_2).toStringValue());
         System.out.println("Это равняется - " + manipulations.div(fraction_1, fraction_2).value());
+        System.out.println("Разность от ваших дробей = " + manipulations.ded(fraction_1, fraction_2).toStringValue());
+        System.out.println("Это равняется - " + manipulations.ded(fraction_1, fraction_2).value());
         System.out.println("Произведение ваших дробей = " + manipulations.mul(fraction_1, fraction_2).toStringValue());
         System.out.println("Это равняется - " + manipulations.mul(fraction_1, fraction_2).value());
+    }
 
+    private void oneMoreCycle() {
         //Ask user for one more cycle
         System.out.println("Хотите произвести операции с другими дробями? y/n");
+        Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
             if (scan.nextLine().toLowerCase().equals("y")) {
                 this.input();

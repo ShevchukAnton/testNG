@@ -16,7 +16,7 @@ public class FractionNumOperations {
         return new FractionNumber(dividend, divisor);
     }
 
-    public FractionNumber div(FractionNumber a, FractionNumber b) throws IllegalArgumentException {
+    public FractionNumber ded(FractionNumber a, FractionNumber b) throws IllegalArgumentException {
         if (a == null || b == null) {
             throw new IllegalArgumentException("Arguments Can't be null");
         }
@@ -35,7 +35,7 @@ public class FractionNumOperations {
         return new FractionNumber(dividend, divisor);
     }
 
-    public FractionNumber sub(FractionNumber a, FractionNumber b) throws IllegalArgumentException, ArithmeticException {
+    public FractionNumber div(FractionNumber a, FractionNumber b) throws IllegalArgumentException, ArithmeticException {
         if (a == null || b == null) {
             throw new IllegalArgumentException("Arguments Can't be null");
         }
