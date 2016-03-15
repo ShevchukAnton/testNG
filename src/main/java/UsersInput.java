@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class UsersInput {
 
     private int[] usersData;
-
+    private Scanner scan = new Scanner(System.in);
     public UsersInput() {
 
     }
@@ -17,7 +17,6 @@ public class UsersInput {
         usersData = new int[4];
         System.out.println("Здравствуйте " + System.getProperty("user.name") + ".");
         System.out.println("Введите делимое для первой дроби: ");
-        Scanner scan = new Scanner(System.in);
 
         while (!scan.hasNextInt()) {
             System.out.println("Делимое должно быть целым числом");
@@ -27,13 +26,9 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для первой дроби: ");
-        while (!scan.hasNextInt()) {
-            System.out.println("Делитель должен быть целым числом");
-            scan = new Scanner(System.in);
-            if (scan.nextInt() == 0) {
-                System.out.println("Делитель не может быть равен 0");
+        while (scan.nextInt() == 0 || !scan.hasNextInt()) {
+                System.out.println("Делитель должен быть целым числом больше 0");
                 scan = new Scanner(System.in);
-            }
         }
         usersData[1] = scan.nextInt();
 
@@ -47,13 +42,9 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для второй дроби: ");
-        while (!scan.hasNextInt()) {
-            System.out.println("Делитель должен быть целым числом");
+        while (scan.nextInt() == 0 || !scan.hasNextInt()) {
+            System.out.println("Делитель должен быть целым числом больше 0");
             scan = new Scanner(System.in);
-            if (scan.nextInt() == 0) {
-                System.out.println("Делитель не может быть равен 0");
-                scan = new Scanner(System.in);
-            }
         }
         usersData[3] = scan.nextInt();
 
@@ -82,7 +73,6 @@ public class UsersInput {
     private void oneMoreCycle() {
         //Ask user for one more cycle
         System.out.println("Хотите произвести операции с другими дробями? y/n");
-        Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
             if (scan.nextLine().toLowerCase().equals("y")) {
                 this.input();

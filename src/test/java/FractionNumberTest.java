@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
  * @author anton
  * @date 26.02.16.
  */
-public class FractionNumberTests {
+public class FractionNumberTest {
 
     private int a, b, c, d;
     private FractionNumOperations operations;
