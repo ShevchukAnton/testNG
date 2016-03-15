@@ -26,9 +26,12 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для первой дроби: ");
-        while (scan.nextInt() == 0 || !scan.hasNextInt()) {
+        while (!scan.hasNextInt()) {
+            if (scan.nextInt() == 0) {
                 System.out.println("Делитель должен быть целым числом больше 0");
-                scan = new Scanner(System.in);
+            }
+            System.out.println("Делитель должен быть целым числом больше 0");
+            scan = new Scanner(System.in);
         }
         usersData[1] = scan.nextInt();
 
@@ -42,7 +45,10 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для второй дроби: ");
-        while (scan.nextInt() == 0 || !scan.hasNextInt()) {
+        while (!scan.hasNextInt()) {
+            if (scan.nextInt() == 0) {
+                System.out.println("Делитель должен быть целым числом больше 0");
+            }
             System.out.println("Делитель должен быть целым числом больше 0");
             scan = new Scanner(System.in);
         }
@@ -51,6 +57,7 @@ public class UsersInput {
         operations();
 
         oneMoreCycle();
+        scan.close();
     }
 
     private void operations() {
@@ -74,9 +81,10 @@ public class UsersInput {
         //Ask user for one more cycle
         System.out.println("Хотите произвести операции с другими дробями? y/n");
         while (scan.hasNext()) {
-            if (scan.nextLine().toLowerCase().equals("y")) {
+            String tmp = scan.nextLine();
+            if (tmp.toLowerCase().equals("y")) {
                 this.input();
-            } else if (scan.nextLine().toLowerCase().equals("n")) {
+            } else if (tmp.toLowerCase().equals("n")) {
                 System.out.println("Спасибо что воспользовались услугами нашей компании");
                 System.exit(0);
             }
