@@ -1,3 +1,5 @@
+package mwdn.anton.shevchuk;
+
 import java.util.Scanner;
 
 /**

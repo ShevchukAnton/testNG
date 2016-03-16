@@ -1,9 +1,11 @@
+package mwdn.anton.shevchuk;
+
 /**
  * Created by anton on 19.10.15.
  */
 public class FractionNumOperations {
 
-    FractionNumOperations() {
+    public FractionNumOperations() {
 
     }
 
