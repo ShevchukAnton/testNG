@@ -29,13 +29,18 @@ public class UsersInput {
 
         System.out.println("Введите делитель для первой дроби: ");
         while (!scan.hasNextInt()) {
-            if (scan.nextInt() == 0) {
-                System.out.println("Делитель должен быть целым числом больше 0");
+            System.out.println("Делитель должен быть целым числом больше 0");
+            scan = new Scanner(System.in);
+        }
+        while (scan.hasNextInt()) {
+            int tmp = scan.nextInt();
+            if (tmp != 0) {
+                usersData[1] = tmp;
+                break;
             }
             System.out.println("Делитель должен быть целым числом больше 0");
             scan = new Scanner(System.in);
         }
-        usersData[1] = scan.nextInt();
 
 
         System.out.println("Введите делимое для второй дроби: ");
@@ -48,13 +53,18 @@ public class UsersInput {
 
         System.out.println("Введите делитель для второй дроби: ");
         while (!scan.hasNextInt()) {
-            if (scan.nextInt() == 0) {
-                System.out.println("Делитель должен быть целым числом больше 0");
+            System.out.println("Делитель должен быть целым числом больше 0");
+            scan = new Scanner(System.in);
+        }
+        while (scan.hasNextInt()) {
+            int tmp = scan.nextInt();
+            if (tmp != 0) {
+                usersData[3] = tmp;
+                break;
             }
             System.out.println("Делитель должен быть целым числом больше 0");
             scan = new Scanner(System.in);
         }
-        usersData[3] = scan.nextInt();
 
         operations();
 
