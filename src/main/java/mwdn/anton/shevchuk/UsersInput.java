@@ -1,5 +1,6 @@
 package mwdn.anton.shevchuk;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -28,18 +29,19 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для первой дроби: ");
-        while (!scan.hasNextInt()) {
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
-        }
-        while (scan.hasNextInt()) {
-            int tmp = scan.nextInt();
-            if (tmp != 0) {
-                usersData[1] = tmp;
-                break;
+        while (scan.hasNext()) {
+            try {
+                int tmp = Integer.parseInt(scan.next());
+                if (tmp != 0) {
+                    usersData[1] = tmp;
+                    break;
+                }
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
             }
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
         }
 
 
@@ -52,18 +54,19 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для второй дроби: ");
-        while (!scan.hasNextInt()) {
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
-        }
-        while (scan.hasNextInt()) {
-            int tmp = scan.nextInt();
-            if (tmp != 0) {
-                usersData[3] = tmp;
-                break;
+        while (scan.hasNext()) {
+            try {
+                int tmp = Integer.parseInt(scan.next());
+                if (tmp != 0) {
+                    usersData[3] = tmp;
+                    break;
+                }
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
             }
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
         }
 
         operations();
