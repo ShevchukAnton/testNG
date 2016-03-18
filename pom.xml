@@ -64,7 +64,7 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.19.1</version>
             </plugin>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <executions>
@@ -77,17 +77,19 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <excludeDefaultDirectories>true</excludeDefaultDirectories>
                     <filesets>
                         <fileset>
-                            <directory>/target</directory>
+                            <directory>${project.basedir}/target</directory>
                             <followSymlinks>false</followSymlinks>
                             <excludes>
-                                <exclude>/surefire-reports</exclude>
+                                <exclude>**/surefire-reports/**</exclude>
+                                <exclude>*.jar</exclude>
                             </excludes>
                         </fileset>
                     </filesets>
                 </configuration>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 </project>
