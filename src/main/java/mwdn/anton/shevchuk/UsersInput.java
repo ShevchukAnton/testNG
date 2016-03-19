@@ -1,3 +1,6 @@
+package mwdn.anton.shevchuk;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -26,14 +29,20 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для первой дроби: ");
-        while (!scan.hasNextInt()) {
-            if (scan.nextInt() == 0) {
+        while (scan.hasNext()) {
+            try {
+                int tmp = Integer.parseInt(scan.next());
+                if (tmp != 0) {
+                    usersData[1] = tmp;
+                    break;
+                }
                 System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
             }
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
         }
-        usersData[1] = scan.nextInt();
 
 
         System.out.println("Введите делимое для второй дроби: ");
@@ -45,14 +54,20 @@ public class UsersInput {
 
 
         System.out.println("Введите делитель для второй дроби: ");
-        while (!scan.hasNextInt()) {
-            if (scan.nextInt() == 0) {
+        while (scan.hasNext()) {
+            try {
+                int tmp = Integer.parseInt(scan.next());
+                if (tmp != 0) {
+                    usersData[3] = tmp;
+                    break;
+                }
                 System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Делитель должен быть целым числом больше 0");
+                scan = new Scanner(System.in);
             }
-            System.out.println("Делитель должен быть целым числом больше 0");
-            scan = new Scanner(System.in);
         }
-        usersData[3] = scan.nextInt();
 
         operations();
 

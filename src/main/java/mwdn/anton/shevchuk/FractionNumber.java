@@ -1,3 +1,5 @@
+package mwdn.anton.shevchuk;
+
 /**
  * Created by anton on 19.10.15.
  */
@@ -6,7 +8,7 @@ public class FractionNumber {
     private int dividend;
     private int divisor;
 
-    FractionNumber(int dividend, int divisor) {
+    public FractionNumber(int dividend, int divisor) {
         if (divisor == 0) {
             throw new IllegalArgumentException("Divisor can't be 0");
         }
@@ -14,7 +16,7 @@ public class FractionNumber {
         this.divisor = divisor;
     }
 
-    FractionNumber() {
+    public FractionNumber() {
         dividend = 1;
         divisor = 1;
     }
