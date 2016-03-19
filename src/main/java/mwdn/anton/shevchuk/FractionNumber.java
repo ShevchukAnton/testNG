@@ -42,7 +42,7 @@ public class FractionNumber {
 
     public double value() {
         double result = (double) dividend / divisor;
-        return Math.rint(result * 100) / 100;
+        return Math.round(result * 100) / 100;
     }
 
     public String toStringValue() {

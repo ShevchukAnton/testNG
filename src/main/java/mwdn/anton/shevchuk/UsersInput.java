@@ -36,10 +36,10 @@ public class UsersInput {
                     usersData[1] = tmp;
                     break;
                 }
-                System.out.println("Делитель должен быть целым числом больше 0");
+                System.out.println("Делитель должен быть целым числом отличным от 0");
                 scan = new Scanner(System.in);
             } catch (InputMismatchException | NumberFormatException e) {
-                System.out.println("Делитель должен быть целым числом больше 0");
+                System.out.println("Делитель должен быть целым числом отличным от 0");
                 scan = new Scanner(System.in);
             }
         }
@@ -61,10 +61,10 @@ public class UsersInput {
                     usersData[3] = tmp;
                     break;
                 }
-                System.out.println("Делитель должен быть целым числом больше 0");
+                System.out.println("Делитель должен быть целым числом отличным от 0");
                 scan = new Scanner(System.in);
             } catch (InputMismatchException | NumberFormatException e) {
-                System.out.println("Делитель должен быть целым числом больше 0");
+                System.out.println("Делитель должен быть целым числом отличным от 0");
                 scan = new Scanner(System.in);
             }
         }
