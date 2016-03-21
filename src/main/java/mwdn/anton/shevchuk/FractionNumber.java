@@ -41,8 +41,8 @@ public class FractionNumber {
     }
 
     public double value() {
-        double result = (double) dividend / divisor;
-        return Math.round(result * 100) / 100;
+        double result = (double) dividend /(double) divisor;
+        return (double) Math.round(result * 100) / 100;
     }
 
     public String toStringValue() {
