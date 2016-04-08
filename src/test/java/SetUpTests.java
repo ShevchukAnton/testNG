@@ -1,4 +1,4 @@
-import mwdn.anton.shevchuk.FractionNumOperations;
+import models.FractionNumOperations;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 

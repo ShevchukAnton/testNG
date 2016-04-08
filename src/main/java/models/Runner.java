@@ -1,4 +1,4 @@
-package mwdn.anton.shevchuk;
+package models;
 
 /**
  * @author anton

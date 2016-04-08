@@ -1,4 +1,4 @@
-package mwdn.anton.shevchuk;
+package models;
 
 /**
  * Created by anton on 19.10.15.

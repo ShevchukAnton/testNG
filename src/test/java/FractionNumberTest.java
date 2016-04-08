@@ -1,4 +1,4 @@
-import mwdn.anton.shevchuk.FractionNumber;
+import models.FractionNumber;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
